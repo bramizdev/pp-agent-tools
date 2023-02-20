@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Author and description -->
+    <meta name="author" content="Brayan Miza" />
+    <meta name="description" content="Productivity tools for agents." />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700&family=Red+Hat+Display:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon-32x32.png"
+    />
+    <title>Agent tools</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="main-header">
+        <h1 class="main-header__title">Agent tools</h1>
+      </header>
+      <main class="tools-grid">
+        <article class="tool email-masking-tool">
+          <div class="tool__input-section">
+            <header class="tool__header">
+              <h2 class="tool__title" data-icon="email">Email masking tool</h2>
+            </header>
+            <form class="form email-masking-tool__form">
+              <label for="emt-email">Paste an email</label>
+              <input
+                type="email"
+                id="emt-email"
+                placeholder="e.g. email@email.com"
+                class="form__input"
+                autocomplete="off"
+              />
+              <div class="form__btns">
+                <button type="submit" id="emt-mask-email-btn" class="btn">
+                  Mask email
+                </button>
+                <button type="button" id="emt-reset" class="btn">Reset</button>
+              </div>
+            </form>
+            <div id="emt-alert" class="alert hidden">
+              <p>Please add a valid email address!</p>
+            </div>
+          </div>
+          <div id="emt-response-container" class="tool__output-section hidden">
+            <div class="flex">
+              <span class="tool__output-label">Email:</span>
+              <p id="emt-response-email" class="tool__output-response" required>
+                e***l@email.com
+              </p>
+            </div>
+            <div class="flex">
+              <span class="tool__output-label">Shortcut: </span>
+              <p id="emt-response-shortcut" class="tool__output-response">
+                Is e***l@email.com the best email address for me to send you a
+                confirmation of your appointment?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tool appointment-note-generator">
+          <div class="tool__input-section">
+            <header class="tool__header">
+              <h2 class="tool__title" data-icon="note">
+                Appointment note generator
+              </h2>
+            </header>
+            <form class="form appointment-note-generator__form">
+              <div class="flex-no-gap">
+                <label for="ang-recall-code">Recall Code:</label>
+                <input
+                  type="text"
+                  id="ang-recall-code"
+                  placeholder="e.g. OEM Code 01ZC3"
+                  class="form__input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="flex-no-gap">
+                <label for="ang-date">Appt date and time:</label>
+                <input
+                  type="text"
+                  id="ang-date"
+                  placeholder="e.g. Feb 23 9:00AM"
+                  class="form__input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="flex-no-gap">
+                <label for="ang-system">System:</label>
+                <input
+                  type="text"
+                  id="ang-system"
+                  placeholder="e.g. Xtime"
+                  class="form__input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="flex-no-gap">
+                <label for="ang-transportation">Transportation:</label>
+                <input
+                  type="text"
+                  id="ang-transportation"
+                  placeholder="e.g. Drop off"
+                  class="form__input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="flex-no-gap">
+                <label for="ang-complimentary">Complimentary services:</label>
+                <input
+                  type="text"
+                  id="ang-complimentary"
+                  placeholder="e.g. Muti-point inspection"
+                  class="form__input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="flex-no-gap">
+                <label for="ang-additional">Additional services:</label>
+                <input
+                  type="text"
+                  id="ang-additional"
+                  placeholder="e.g. Oil change"
+                  class="form__input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="flex-no-gap">
+                <label for="ang-parts-availability"
+                  >Select parts availability:</label
+                >
+                <select
+                  name="ang-parts-availability"
+                  id="ang-parts-availability"
+                  class="form__input"
+                >
+                  <option value="parts-yes">Yes</option>
+                  <option value="parts-limited">Limited</option>
+                </select>
+              </div>
+              <div class="form__btns">
+                <button type="submit" id="ang-note" class="btn">
+                  Generate note
+                </button>
+                <button type="button" id="ang-reset" class="btn">Reset</button>
+              </div>
+              <div id="ang-alert" class="alert hidden">
+                <p>
+                  There are some empty fields, please double-check before use
+                  the note!
+                </p>
+              </div>
+            </form>
+          </div>
+          <div id="ang=response-container" class="tool__output-section hidden">
+            <div class="flex">
+              <span class="tool__output-label">Note: </span>
+              <p id="ang-response-note" class="tool__output-response"></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tool phone-number-format-remover">
+          <div class="tool__input-section">
+            <header class="tool__header">
+              <h2 class="tool__title" data-icon="phone">
+                Phone number format remover
+              </h2>
+            </header>
+            <form class="form phone-number-format-remover__form">
+              <label for="pnfr-phone">Paste a phone number</label>
+              <input
+                type="tel"
+                id="pnfr-phone"
+                placeholder="e.g. +1 (202) 555-0907"
+                class="form__input"
+                autocomplete="off"
+              />
+              <div class="form__btns">
+                <button type="submit" id="pnfr-remove-format" class="btn">
+                  Remove format
+                </button>
+                <button type="button" id="pnfr-reset" class="btn">Reset</button>
+              </div>
+              <div id="pnfr-alert" class="alert hidden">
+                <p>Please add a valid phone number!</p>
+              </div>
+            </form>
+          </div>
+          <div id="pnfr-response-container" class="tool__output-section hidden">
+            <div class="flex">
+              <span class="tool__output-label">Phone number: </span>
+              <p id="pnfr-reponse-number" class="tool__output-response"></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tool mileage-calculator">
+          <div class="tool__input-section">
+            <header class="tool__header">
+              <h2 class="tool__title" data-icon="calculator">
+                Mileage Calculator
+              </h2>
+            </header>
+            <form class="form mileage-calculator__form">
+              <label for="mc-year">Paste the model year</label>
+              <input
+                type="number"
+                id="mc-year"
+                placeholder="e.g. 2010"
+                class="form__input"
+                autocomplete="off"
+                min="2000"
+              />
+              <div class="form__btns">
+                <button type="submit" id="mc-calculate-mileage" class="btn">
+                  Calculate mileage
+                </button>
+                <button type="button" id="mc-reset" class="btn">Reset</button>
+              </div>
+              <div id="mc-alert" class="alert hidden">
+                <p>Please add a valid year!</p>
+              </div>
+            </form>
+          </div>
+          <div id="mc-response-container" class="tool__output-section hidden">
+            <div class="flex">
+              <span class="tool__output-label">Mileage: </span>
+              <p id="mc-reponse-mileage" class="tool__output-response"></p>
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
