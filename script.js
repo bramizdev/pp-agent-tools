@@ -38,7 +38,7 @@ const validateEmail = (email) => {
 };
 
 const emailShortcutGenerator = (maskedEmail) => {
-  return `Is ${maskedEmail} the best email address for me to send you a confirmation of your appointment?`;
+  return `We will send you a confirmation for your appointment at ${maskedEmail}.`;
 };
 
 const maskUsername = (username) => {
@@ -228,15 +228,6 @@ const noteInfo = {
   parts: document.getElementById('ang-parts-availability'),
 };
 
-const test = {
-  recall: 'OEM Code 01ZC3',
-  date: '',
-  system: '',
-  transportation: 'drop off',
-  complimentary: 'multi-point inspection',
-  additional: 'oil change',
-  parts: 'parts-yes',
-};
 /* ang buttons */
 const generateNoteBtn = document.getElementById('ang-note');
 const apptNoteGeneratorResetBtn = document.getElementById('ang-reset');
